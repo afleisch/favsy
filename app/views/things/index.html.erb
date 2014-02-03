@@ -1,2 +1,14 @@
-<h1>Things#index</h1>
-<p>Find me in app/views/things/index.html.erb</p>
+<h1>Things</h1>
+<div>
+<ul>
+  <% @things.each do |t| %>
+    <li>
+      <%= link_to t.name, thing_path(t) %><br>
+      <%= button_to 'Delete', thing_path(t), method: :delete %><br>
+     	
+      
+    </li>
+  <% end %>
+</ul>
+
+</div>
