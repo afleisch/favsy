@@ -1,6 +1,6 @@
 class ThingsController < ApplicationController
   def index
-    @things = Thing.all
+    redirect_to(root_path)
   end
 
   def new
@@ -21,17 +21,21 @@ class ThingsController < ApplicationController
   def edit
     id = params[:id]
     @thing = Thing.find(id)
+    render :edit
   end
 
   def update
-    @thing = current_user.things.where(:id => params[:id])
-    @thing.update_attributes(params[:thing])
+    id = params[:id]
+    thing = Thing.find(id)
+    updated_attributes = params.require(:thing).permit(:name, :description, :reason, :street, :city, :state, :zip_code)
+    thing.update_attributes(updated_attributes)
     render :show
   end
 
   def destroy
-    @thing = current_user.things.where(:id => params[:id])
-    @thing.delete
+    id = params[:id]
+    thing = Thing.find(id)
+    thing.destroy
     redirect_to(things)
   end
 end
