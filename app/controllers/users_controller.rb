@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   def show
   	id = params[:id]
   	@user = User.find(id)
-    
   end
 
   def new
@@ -10,11 +9,11 @@ class UsersController < ApplicationController
   end
 
   def create
-
-  	@user=User.new(params.require(:user).permit(:email, :password, :password_confirmation))
+    new_user = params.require(:user).permit(:email, :password, :password_confirmation)
+    @user=User.new(new_user)
     if @user.save
       flash[:notice] = "Welcome to Vetted!"
-      #sign_in @user
+      sign_in @user
       redirect_to @user
     else
       render'new'
@@ -24,5 +23,6 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update_attributes(params[:user])
+    render :show
   end
 end
