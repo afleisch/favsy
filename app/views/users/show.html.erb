@@ -1,6 +1,10 @@
 <h1>Things you have vetted</h1>
+<% @user.things.each do |t| %>
+<%= t.name %>
+<% end %>
 
-      <%= link_to "Things you love", things_path %>
+
+    
      
      	
       
