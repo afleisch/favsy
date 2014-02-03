@@ -38,4 +38,11 @@ class ThingsController < ApplicationController
     thing.destroy
     redirect_to(things)
   end
+
+  def get_address
+    id = params[:id]
+    @thing = Thing.find(id)
+    @address = @thing.street + ", " + @thing.city + ", " + @thing.state + ", " + @thing.zip_code
+    return @address
+  end
 end
