@@ -1,5 +1,5 @@
 <h1>Things you have vetted</h1>
-<% @user.things.each do |t| %>
+<% current_user.things.each do |t| %>
 <%= link_to t.name, thing_path(t) %><br>
 <% end %>
 
