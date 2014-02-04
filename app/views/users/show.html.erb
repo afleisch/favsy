@@ -1,11 +1,18 @@
-<h1>Things you have vetted</h1>
-<% @user.things.each do |t| %>
-<%= link_to t.name, thing_path(t) %><br>
-<% end %>
 
+
+<h1>Things you have vetted</h1>
+<ul>
+<% @user.things.each do |t| %>
+<li>
+<%= link_to t.name, thing_path(t) %>
+</li>
+<% end %>
+</ul>
 <%= button_to "Add a Thing", new_thing_path, method: :get %>
 
 <%= link_to "Sign Out", signout_path, method: 'delete' %>
+
+
 
     
      
