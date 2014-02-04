@@ -44,7 +44,7 @@ class ThingsController < ApplicationController
     id = params[:id]
     thing = Thing.find(id)
     thing.destroy
-    redirect_to(things)
+    redirect_to user_path(current_user.id)
   end
 
   def get_address
