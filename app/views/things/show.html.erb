@@ -5,3 +5,7 @@
     <li>Reason You Love It: <%=@thing.reason %></li>
     <li>Where It Is: <%= link_to @thing.street + ", " + @thing.city + ", " + @thing.state + ", " + @thing.zip_code, 'http://www.google.com' %></li>
 </ul>
+
+<%= button_to 'Edit', edit_thing_path, method: :get %>
+<%= button_to 'Delete', action: "destroy" %>
+
