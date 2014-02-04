@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
 	has_secure_password
 	before_save :create_remember_token
 	has_many :things
+	validates :password, confirmation: true
+	validates :email, confirmation: true
+	
 
 
 
