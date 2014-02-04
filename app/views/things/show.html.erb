@@ -4,8 +4,11 @@
 <ul>
 	<li>Description: <%=@thing.description %></li>
     <li>Reason You Love It: <%=@thing.reason %></li>
-    <li>Where It Is: <%= link_to @thing.street + ", " + @thing.city + ", " + @thing.state + ", " + @thing.zip_code, 'http://www.google.com' %></li>
+    <li>Where It Is: <%= @address %></li>
 </ul>
+<div>
+	<%= image_tag(@map_url) %>
+</div>
 
 
 <%= button_to "delete", @thing, :method => :delete %>
