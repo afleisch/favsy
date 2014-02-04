@@ -33,10 +33,8 @@ class ThingsController < ApplicationController
   end
 
   def update
-    id = params[:id]
-    thing = Thing.find(id)
-    updated_attributes = params.require(:thing).permit(:name, :description, :reason, :street, :city, :state, :zip_code)
-    thing.update_attributes(updated_attributes)
+    @thing = current_user.things.where(:id => params[:id])
+    @thing.update_attributes(params[:thing])
     render :show
   end
 
