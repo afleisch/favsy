@@ -2,7 +2,7 @@ class ThingsController < ApplicationController
   include ThingsHelper
   include SessionsHelper
 
-  before_filter :signed_in_user, only: [:create, :new, :edit, :update]
+  before_filter :signed_in_user, only: [:create, :new, :edit, :update, :destroy]
   # before_filter :check_thing_owner, only: [:new, :create, :destroy, :update, :edit]
 
 
@@ -33,8 +33,10 @@ class ThingsController < ApplicationController
   end
 
   def update
-    @thing = current_user.things.where(:id => params[:id])
-    @thing.update_attributes(params[:thing])
+    thing_id = params[:id]
+    @thing = current_user.things.find(thing_id)
+    new_attributes = params.require(:thing).permit(:name, :description, :reason, :street, :state, :zip_code)
+    @thing.update_attributes(new_attributes)
     render :show
   end
 
