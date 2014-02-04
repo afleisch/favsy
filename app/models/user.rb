@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 	has_many :things
 	validates :password, confirmation: true
 	validates :email, confirmation: true
+	validates :email, uniqueness: { case_sensitive: false }
 	
 
 
