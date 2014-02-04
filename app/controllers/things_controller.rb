@@ -3,7 +3,7 @@ class ThingsController < ApplicationController
   include SessionsHelper
 
   before_filter :signed_in_user, only: [:create, :new, :edit, :update, :destroy]
-  # before_filter :check_thing_owner, only: [:new, :create, :destroy, :update, :edit]
+  before_filter :check_thing_owner, only: [:new, :create, :destroy, :update, :edit]
 
 
   def index
