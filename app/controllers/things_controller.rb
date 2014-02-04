@@ -4,7 +4,8 @@ class ThingsController < ApplicationController
 
   before_filter :signed_in_user, only: [:create, :new, :edit, :update, :destroy]
   before_filter :check_thing_owner, only: [:new, :create, :destroy, :update, :edit]
-
+  before_action :get_address
+  before_action :get_map_url
 
   def index
     redirect_to(root_path)
@@ -47,10 +48,5 @@ class ThingsController < ApplicationController
     redirect_to user_path(current_user.id)
   end
 
-  def get_address
-    id = params[:id]
-    @thing = Thing.find(id)
-    @address = @thing.street + ", " + @thing.city + ", " + @thing.state + ", " + @thing.zip_code
-    return @address
-  end
+ 
 end
