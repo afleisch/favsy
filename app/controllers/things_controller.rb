@@ -18,7 +18,7 @@ class ThingsController < ApplicationController
     new_thing = params.require(:thing).permit(:name, :description, :reason, :street, :city, :state, :zip_code)
     new_thing[:user_id]= current_user.id 
     @thing = Thing.create(new_thing)
-    render :show 
+    redirect_to user_path(current_user.id)
   end
 
   def show
