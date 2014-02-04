@@ -1,4 +1,11 @@
 class ThingsController < ApplicationController
+  include ThingsHelper
+  include SessionsHelper
+
+  before_filter :signed_in_user, only: [:create, :new, :edit, :update]
+  # before_filter :check_thing_owner, only: [:new, :create, :destroy, :update, :edit]
+
+
   def index
     redirect_to(root_path)
   end
@@ -9,8 +16,9 @@ class ThingsController < ApplicationController
 
   def create
     new_thing = params.require(:thing).permit(:name, :description, :reason, :street, :city, :state, :zip_code)
+    new_thing[:user_id]= current_user.id
     @thing = Thing.create(new_thing)
-    render :show  
+    render :show 
   end
 
   def show
