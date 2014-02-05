@@ -17,7 +17,7 @@ module ThingsHelper
 
     def get_map_url
     	@address = get_address
-    	@map_url = "https://maps.googleapis.com/maps/api/staticmap?center=#{@address}&zoom=13&size=300x300&sensor=false"
+    	@map_url = "https://maps.googleapis.com/maps/api/staticmap?markers=color:red%7Clabel:C%7C#{@address}&zoom=13&size=300x300&sensor=false"
     
     end
 end
