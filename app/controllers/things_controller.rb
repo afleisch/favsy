@@ -3,9 +3,9 @@ class ThingsController < ApplicationController
   include SessionsHelper
 
   before_filter :signed_in_user, only: [:create, :new, :edit, :update, :destroy]
-  before_filter :check_thing_owner, only: [:new, :create, :destroy, :update, :edit]
-  before_action :get_address
-  before_action :get_map_url
+  before_filter :check_thing_owner, only: [:destroy, :update, :edit]
+  before_action :get_address, only: [:show, :edit, :update]
+  before_action :get_map_url, only: [:show, :edit, :update]
 
   def index
     redirect_to(root_path)
