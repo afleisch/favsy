@@ -1,13 +1,14 @@
 <h1><%=current_user.email%></h1>
 
 <h2>Things you have vetted</h2>
-<ul>
-<% @user.things.each do |t| %>
-<li>
-<%= link_to t.name, thing_path(t) %>
-</li>
-<% end %>
-</ul>
+ <ul>
+  <% @user.things.each do |t| %>
+   <li>
+    <%= link_to t.name, thing_path(t) %>
+   </li>
+  <% end %>
+ </ul>
+
 <%= button_to "Add a Thing", new_thing_path, method: :get %>
 
 
