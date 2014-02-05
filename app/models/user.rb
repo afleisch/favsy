@@ -7,19 +7,11 @@ class User < ActiveRecord::Base
 	validates :email, uniqueness: { case_sensitive: false }
 	validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 	validates_length_of :password, :in => 6..15, :on => :create
-	
-
-
-
 
 	private
 
 	def create_remember_token
 		self.remember_token = SecureRandom.urlsafe_base64
 	end
-
-
-
-
 
 end
