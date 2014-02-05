@@ -1,14 +1,3 @@
 <h1> Edit <%=@thing.name%> </h1>
 
-
-  <%= form_for @thing do |t| %>
-	<%= t.text_field :name, placeholder: "What do you love?" %> <br>
-	<%= t.text_field :description, placeholder: "What type of thing is it?" %> <br>
-	<%= t.text_area :reason, placeholder: "Why do you love it?" %> <br>
-	<%= t.text_field :street, placeholder: "Street Address" %> <br>
-	<%= t.text_field :city, placeholder: "City" %> <br>
-	<%= t.text_field :state, placeholder: "State" %> <br>
-	<%= t.text_field :zip_code, placeholder: "Zip" %> <br>
-	<%= t.submit %> <br>
-
-  <% end %>
+<%= render :partial => 'form' %>
