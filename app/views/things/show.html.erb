@@ -7,7 +7,7 @@
     <li>Where It Is: <%= @address %></li>
 </ul>
 <div>
-	<%= image_tag(@map_url) %>
+	<%= link_to image_tag("#{@map_url}"), "#{@map_url}" %>
 </div>
 
 
