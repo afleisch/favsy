@@ -1,29 +1,28 @@
 <h1>Sign up</h1>
 
 <div>
-    <%= form_for(@user) do |f| %>
-      <% if @user.errors.any? %>
-       <div id = "error_explanation">
-       	<h2>Please check your input:</h2>
-
-       	<ul>
+  <%= form_for(@user) do |f| %>
+    <% if @user.errors.any? %>
+     <div id = "error_explanation">
+      <h2>Please check your input:</h2>
+       <ul>
        	<% @user.errors.full_messages.each do |msg| %>
        	 <li><%= msg %></li>
        	<% end %>
-       	</ul>
-       </div>
-      <% end %>	
+       </ul>
+     </div>
+  <% end %>	
     
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation %>
 
-      <%= f.submit "Create my account"%>
+    <%= f.submit "Create my account"%>
     <% end %>
 
 </div>
