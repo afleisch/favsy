@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Favsy::Application.config.secret_key_base = 'af8e3a2798916660f77703abb182d8d9a8d1adb5c74df1f13e606d8cd7cbb8f22f40ab9654cc9dd06492bb3f50988ef12d0bea180b12944449ba542644bfc153'
+Favsy::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']
