@@ -11,7 +11,7 @@
 	<%= link_to image_tag("#{@map_url}"), "#{@map_url}" %>
  </div>
 
-
+<br>
 <%= button_to "delete", @thing, :method => :delete %>
 <%= button_to "edit", edit_thing_path(@thing), :method => :get %>
 <%= button_to "Return to profile", user_path(current_user.id), :method => :get %>
