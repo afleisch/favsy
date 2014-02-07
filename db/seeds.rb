@@ -16,6 +16,7 @@ city: "San Francisco", state: "CA", zip_code: "94110")
 ashley.things.create(name: "smallfrys", description: "Store", reason: "great baby clothes for Rosie", 
 street: "4066 24th Street", city: "San Francisco", state: "CA", zip_code: "94114")
 
+
 lauren.things.create(name: "Bette", description: "beauty", reason: "stylist who can cut and style thick hair",
 	street: "3915 24th Street", city: "San Francisco", state: "CA", zip_code: "94114")
 lauren.things.create(name: "Tea Way", description: "cafe", reason: "great bubble tea, has good variety of boba",

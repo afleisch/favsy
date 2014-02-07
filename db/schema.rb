@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140203231503) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "things", force: true do |t|
     t.string   "name"
     t.string   "description"
@@ -26,7 +29,7 @@ ActiveRecord::Schema.define(version: 20140203231503) do
     t.integer  "user_id"
   end
 
-  add_index "things", ["user_id"], name: "index_things_on_user_id"
+  add_index "things", ["user_id"], name: "index_things_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email"
@@ -36,6 +39,6 @@ ActiveRecord::Schema.define(version: 20140203231503) do
     t.string   "remember_token"
   end
 
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end
