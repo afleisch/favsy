@@ -1,28 +1,13 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+VETTED is a web application built on Rails that allows users to save basic information about
+life experiences that they have enjoyed.  It can be anything - a restaurant, a bar, a doctor,
+a beauty product, a clothes designer, etc.  Really anything.  
 
-Things you may want to cover:
+Users save the name of the thing, the description, the reason they love it, and the location
+of where they experienced it to reference again in the future. 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Eventually, added functionality will allow users to sort things by category and/or location
+and share their lists of things with other users.  The idea is to get recommendations from people
+whose opinions you value at any time.  It also allows users to keep track of businesses, people or products 
+they would like to use again without needing to keep track of them manually.
