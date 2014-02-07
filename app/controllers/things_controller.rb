@@ -19,7 +19,15 @@ class ThingsController < ApplicationController
     new_thing = params.require(:thing).permit(:name, :description, :reason, :street, :city, :state, :zip_code)
     new_thing[:user_id]= current_user.id 
     @thing = Thing.create(new_thing)
+    if @thing.valid?
     redirect_to user_path(current_user.id)
+    else
+    errors= @thing.errors.full_messages 
+    errors.each do |msg|
+     flash[:error] = msg
+    redirect_to new_thing_path
+    end
+   end  
   end
 
   def show
