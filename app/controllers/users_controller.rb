@@ -20,6 +20,7 @@ class UsersController < ApplicationController
     end
   end
 
+  #currently there is no form for this
   def update
     @user = User.find(params[:id])
     @user.update_attributes(params[:user])
