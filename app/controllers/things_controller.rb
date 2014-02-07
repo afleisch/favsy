@@ -7,7 +7,7 @@ class ThingsController < ApplicationController
   before_filter :check_thing_owner, only: [:destroy, :update, :edit]
   #concat the street, city, state, and zip_code into a string and save to an instance variable
   before_action :get_address, only: [:show, :edit, :update]
-  #insert the above instance variable into the google maps static map api request
+  #insert the above instance variable into the google maps static map api request before the page loads
   before_action :get_map_url, only: [:show, :edit, :update]
 
   def index
