@@ -43,6 +43,8 @@ gem 'quiet_assets', group: [:development]
 
 gem 'better_errors', group: [:development]
 
+gem 'dotenv-rails', group: [:development]
+
 gem 'less-rails'
 
 gem 'twitter-bootstrap-rails'
