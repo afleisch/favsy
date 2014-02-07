@@ -9,5 +9,5 @@ of where they experienced it to reference again in the future.
 
 Eventually, added functionality will allow users to sort things by category and/or location
 and share their lists of things with other users.  The idea is to get recommendations from people
-whose opinions you value at any time.  It also allows users to keep track of businesses, people or products 
-they would like to use again without needing to keep track of them manually.
+whose opinions you value at any time.  It also allows users to find businesses, people or products 
+they would like to use again without manually keeping track of the information.
