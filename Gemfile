@@ -52,4 +52,7 @@ gem 'twitter-bootstrap-rails'
 # Use debugger
 gem 'debugger', group: [:development, :test]
 
+gem 'rspec-rails', '~> 3.0.0.beta', group: [:development, :test]
+
+
 ruby "2.0.0"
