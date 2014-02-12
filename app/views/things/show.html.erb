@@ -1,25 +1,27 @@
 <% if current_user.id == @thing.user_id %>
-<h1><%= @thing.name %></h1>
+ 
+ <h1><%= @thing.name %></h1>
 
- <ul>
-	<li>Description: <%=@thing.description %></li>
-    <li>Reason You Love It: <%=@thing.reason %></li>
-    <li>Where It Is: <%= @address %></li>
- </ul>
+  <ul>
+	 <li>Description: <%=@thing.description %></li>
+   <li>Reason You Love It: <%=@thing.reason %></li>
+   <li>Where It Is: <%= @address %></li>
+  </ul>
 
- <div>
-  <!-- Google Maps Api Request -->
-	<%= link_to image_tag("#{@map_url}"), "#{@map_url}" %>
- </div>
+  <div>
+    <!-- Google Maps Api Request -->
+	 <%= link_to image_tag("#{@map_url}"), "#{@map_url}" %>
+  </div>
 
-<br>
-<%= button_to "delete", @thing, :method => :delete %>
-<%= button_to "edit", edit_thing_path(@thing), :method => :get %>
-<%= button_to "Return to profile", user_path(current_user.id), :method => :get %>
+ <br>
+   <%= button_to "delete", @thing, :method => :delete %>
+   <%= button_to "edit", edit_thing_path(@thing), :method => :get %>
+   <%= button_to "Return to profile", user_path(current_user.id), :method => :get %>
 
 <% else %>
-<% flash[:notice] = "You cannot view another user's things" %>
 
-<%= button_to "Return to profile", user_path(current_user.id), :method => :get %>
+ <% flash[:notice] = "You cannot view another user's things" %>
+
+   <%= button_to "Return to profile", user_path(current_user.id), :method => :get %>
 
 <% end %>
